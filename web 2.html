@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JECJA Liquors</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      line-height: 1.5;
+      background-color: #000000;
+      color: #fff;
+    }
+
+    /* General styles */
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+      border-style: none;
+    }
+
+    /* Layout styles */
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -10px;
+    }
+    .col {
+      flex: 0 0 100%;
+      padding: 0 10px;
+    }
+    @media (min-width: 768px) {
+      .col {
+        flex: 0 0 50%;
+      }
+    }
+
+    /* Utility classes */
+    .center {
+      text-align: center;
+    }
+    .round {
+      border-radius: 8px;
+    }
+    .text-primary { color: #2196F3; }
+    .text-grey { color: #777; }
+    .bg-light { background-color: #f9f9f9; }
+    .bg-dark { background-color: #333; color: #fff; }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: #00000;
+      padding: 16px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: top 0.3s; /* Add transition for smooth hiding and showing */
+    }
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #00000;
+    }
+    .navbar a {
+      text-decoration: none;
+      padding: 10px 20px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* Header styles */
+    .header {
+      position: relative;
+      margin-top: 80px;
+    }
+    .header img {
+      width: 100%;
+    }
+    .header .overlay {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 8px;
+    }
+
+    /* Section styles */
+    .section {
+      padding: 64px 0;
+    }
+    .section h1 {
+      font-size: 50px;
+    }
+    .section h5 {
+      font-size: 18px;
+      color: #777;
+    }
+    .section p {
+      margin-bottom: 20px;
+    }
+
+    /* "How it's Done" Section styles */
+    #about {
+      background: url('https://i0.wp.com/www.aesdes.org/wp-content/uploads/2016/01/ol49ydtXXM977nSufSrYjMj5BqNLjez7F96mvaEYZ80Bk9jsNg7Zy-RwTaI-ijcTbkxGj933DHzbFAUI42tw0c.jpg?resize=1024%2C682&ssl=1') no-repeat center center;
+      background-size: cover;
+      color: white;
+      position: relative;
+    }
+    #about .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 10px;
+    }
+    #about h1, #about h5, #about p {
+      margin: 20px 0;
+    }
+    #about h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 48px;
+      font-weight: bold;
+    }
+    #about h5 {
+      font-family: 'Merriweather', serif;
+      font-size: 24px;
+      color: #ddd;
+    }
+    #about p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 18px;
+    }
+    #about .divider {
+      width: 60px;
+      height: 3px;
+      background: #2196F3;
+      margin: 20px auto;
+    }
+
+    /* Form styles */
+    form {
+      margin-top: 20px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      color: #333;
+    }
+    form button {
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    form button:hover {
+      background-color: #0b7dda;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar" id="navbar">
+  <div class="container">
+    <a href="#home">JECJA</a>
+    <div>
+      <a href="#about">Home</a>
+      <a href="#products">Products</a>
+      <a href="#new-section">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<div class="header" style="position: relative;">
+  <img src="/Users/EthanAdorable/Downloads/bar.png" alt="Liquor Store" style="max-width: 100%; height: auto;">
+  <div class="overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+    <img src="/Users/EthanAdorable/Downloads/logo.png" alt="JECJA Logo" style="max-width: 500px; height: auto;">
+    <h1 class="center" style="color: white; font-size: 36px; margin-top: 10px;">JECJA Liquors</h1>
+  </div>
+</div>
+
+
+<!-- Page content -->
+<div class="container">
+
+  <!-- About Section -->
+  <div class="section" id="about">
+    <div class="overlay">
+      <div class="center">
+        <h1>Welcome to JECJA liquors</h1>
+        <div class="divider"></div>
+        <h5>Tradition since 2023</h5>
+        <p>Started by 5 brothers who loved drinks. Jecja represents James, Ethan, Cjay, Jahzeel, and Aron. We have made the best liquors and beer since 2023.</p>
+        <p>At JECJA Liquors, we pride ourselves on offering the finest selection of beers and alcoholic drinks. From local craft beers to international favorites, our diverse range ensures there's something for every taste and occasion. Whether you're looking to explore new flavors or stock up on your go-to beverages, we've got you covered.</p>
+      </div>
+    </div>
+  </div>
+  
+  
+  <hr>
+  
+  <!-- New Section -->
+  <div class="section" id="new-section">
+    <div class="row">
+      <div class="col">
+        <img src="/Users/ethanadorable/downloads/Fampi.jpg" class="round" alt="New Section Image">
+      </div>
+      <div class="col">
+        <h1 class="center">Who We Are</h1>
+        <p style="line-height:5;">JECJA company is founded by 5 brothers not by blood but close brotherhood who had shared vision. United by their passion they have sworn to make the most delicate drinks and alcohol. Due JECJA Founder's Dedication We created a foundation in perfecting our beverages. At JECJA, we believe in more than just making drinks; we believe in creating great experiences to those who want to try our beverages.</p>
+      </div>
+    </div>
+  </div>
+  
+  <hr>
+
+ <hr>
+  <!-- New Section -->
+  <div class="section" id="new-section">
+    <div class="row">
+      <div class="col">
+        <img src="https://advancedmixology.com/cdn/shop/articles/Bottles_and_Jars_of_Fermented_Drinks.jpg?v=1630221795&width=800" class="round" alt="New Section Image">
+      </div>
+      <div class="col">
+        <h1 class="center">Our History</h1>
+        <p style="line-height:5;">it was founded by 5 ordinary students who shared a passion for craft beverages. they decided to start an alcohol company to fill a gap in the market for innovative high quality drinks. with their diverse skills they created “JECJA”. they transformed a small space into a micro distillery and perfected a unique blend of traditional and modern flavors. their hard work and dedication turned JECJA into a renowned brand proving that ordinary students can achieve extraordinary success through collaboration and determination.</p>
+      </div>
+    </div>
+  </div>
+  
+  <hr>
+ 
+
+
+
+<!-- New Section -->
+<div class="section" id="new-section">
+  <div class="row">
+    <div class="col">
+      <h1 class="center">What Makes Us Different</h1>
+      <p style="line-height:5;">J.E.C.J.A is a one of a kind liquor bar, out of this world where you would find our finest drinks and beverages have that certain taste you love and make that moment with your family and friends special. We also add a flavours to enhance our liquors such as Strawberry Spark , Lemon Paradise, Mango Blast and Minty Blizzard so that every sip in your glass is delightful. Buy our 4 pack bundle of appreciation as a welcome gift to becoming part of the J.E.C.J.A family it comes with our sample flavours.✨
+
+Our dream is to make our customers feel pleasurable and satisfied. </p>
+    </div>
+    <div class="col">
+      <img src="/Users/ethanadorable/downloads/Fampi.jpg" class="round" alt="New Section Image">
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- Products Section -->
+  <div class="section" id="products">
+    <div class="row">
+      <div class="col">
+        <h1 class="center">Our Products</h1>
+        <div>
+          <h4>Cocktails</h4>
+          <p class="text-grey">Dennim, Motley, Midnight Galaxy, Love's Ecstasy, Life to Strive</p>
+        </div>
+        <div>
+          <h4>Beer</h4>
+          <p class="text-grey">Pale Pilsen, San mig light, Heineken, Smirnoff,</p>
+        </div>
+        <div>
+          <h4>Hard Liquor</h4>
+          <p class="text-grey">Jack Daniel, Jose Cuervo, Jaigermeister, Charles James, Fundador</p>
+        </div>
+        <div>
+          <h4>Mixed Drinks</h4>
+          <p class="text-grey">Screwdriver, Moscow Mule, Bloody Mary, Pina Colada, Mojito</p>
+        </div>
+        <div>
+          <h4>Brandy</h4>
+          <p class="text-grey">Cosmopolitan, Brandy cocktail, Brandy Alexander, French 75, Sidecar</p>
+        </div>
+      </div>
+      <div class="col">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/18/4d/08/20/paddles.jpg" alt="Menu">
+      </div>
+    </div>
+  </div>
+
+<hr>
+
+<!-- Products Section -->
+  <div class="section" id="products">
+    <div class="row">
+      <div class="col">
+        <h1 class="center">Our Services</h1>
+        <div>
+          <h4>Discover JECJA Liquors - Where Every Drink Tells a Story!</h4>
+          <p class="text-grey">Discover JECJA Liquors, a bar founded by five brothers passionate about creating exceptional drinks. Located in Poblacion, we offer a curated selection of cocktails, beers, and fine spirits in a warm and inviting atmosphere. Join us for an unforgettable drinking experience! </p>
+        </div>
+        <div>
+          <h4>Location</h4>
+          <p class="text-grey">We are located in Toog road, Poblacion</p>
+        </div>
+        <div>
+          <h4>Time</h4>
+          <p class="text-grey">Open 8pm - Closing 6am</p>
+        </div>
+        <div>
+          <h4>Reservation</h4>
+          <p class="text-grey">Reserved tables for customers are prioritized but walk in is still accepted if available</p>
+        </div>
+      </div>
+      <div class="col">
+        <img src="https://arsenalcontent.com/wp-content/uploads/2020/04/kampai-21-1024x576.jpg" alt="Menu">
+      </div>
+    </div>
+  </div>
+  
+ <hr>
+
+
+ <!-- Contact Section -->
+  <div class="section" id="contact">
+    <h1 class="center">Contact</h1>
+    <p>If you want to reserve a beer or cocktails just fill the reservation and we can send it to you!</p>
+    <p class="text-primary"></p>
+    <p>You can also contact us by phone 00000 or via email jecja@catering.com</p>
+    <form action="/action_page.php" method="POST">
+      <p><input type="text" placeholder="Name" required name="Name"></p>
+      <p><input type="number" placeholder="How many people" required name="People"></p>
+      <p><input type="datetime-local" placeholder="Date and time" required name="date" value="2024-06-27T20:00"></p>
+      <p><textarea placeholder="Message / Special requirements" required name="Message"></textarea></p>
+      <p><button type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+  
+</div>
+
+<!-- Footer -->
+<footer class="center bg-black" style="padding:32px;">
+  <p>JECJA Liquors &copy; 2024. All rights reserved.</p>
+</footer>
+
+<script>
+  let lastScrollTop = 0;
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      // Downscroll
+      navbar.style.top = '-80px';
+    } else {
+      // Upscroll
+      navbar.style.top = '0';
+    }
+    lastScrollTop = scrollTop;
+  });
+</script>
+
+</body>
+</html>
